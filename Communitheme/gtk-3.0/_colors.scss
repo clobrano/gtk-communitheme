@@ -2,9 +2,16 @@
 // it gets @if ed depending on $variant
 @import 'colors-custom';
 
+$headerbar_fg_color: #FAFAFA;
+$headerbar_bg_color: #4c4c4c;
+$headerbar_selected_fg_color: #ffffff;
+$headerbar_selected_bg_color: #f07746;
+$headerbar_selected_borders_color: darken($headerbar_selected_bg_color, 30%);
+
+
 $base_color: if($variant == 'light', #ffffff, #232729);
 $text_color: if($variant == 'light', black, white);
-$bg_color: #FAFAFA; //if($variant == 'light', #e8e8e7, #33393b);
+$bg_color: #FAFAFA;
 $fg_color: #4c4c4c;
 
 $selected_fg_color: #ffffff;
@@ -17,7 +24,7 @@ $link_color: if($variant == 'light', darken($selected_bg_color, 10%), lighten($s
 $link_visited_color: if($variant == 'light', darken($selected_bg_color, 20%), lighten($selected_bg_color, 10%));
 $top_hilight: $borders_edge;
 $dark_fill: mix($borders_color, $bg_color, 50%);
-$headerbar_color: if($variant == 'light', lighten(#151515, 5%), darken(#151515, 3%));
+$headerbar_color: darken($headerbar_bg_color, 10%);
 $menu_color: if($variant == 'light', $base_color, mix($bg_color, $base_color, 20%));
 $popover_bg_color: $bg_color;
 $popover_hover_color: lighten($bg_color, 5%);
