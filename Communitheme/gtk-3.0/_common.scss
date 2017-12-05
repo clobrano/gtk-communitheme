@@ -1441,7 +1441,7 @@ headerbar {
   border-color: $alt_borders_color;
   border-radius: 0;
 
-  @include headerbar_fill;
+  @include headerbar_fill($headerbar_color);
 
   &:backdrop {
     border-color: $backdrop_borders_color;
@@ -1456,12 +1456,14 @@ headerbar {
     padding-left: 12px;
     padding-right: 12px;
     font-weight: bold;
+    color: $bg_color;
   }
 
   .subtitle {
     font-size: smaller;
     padding-left: 12px;
     padding-right: 12px;
+    color: lighten($bg_color, %10);
 
     @extend .dim-label;
   }
