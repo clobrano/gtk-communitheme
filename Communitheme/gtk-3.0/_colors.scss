@@ -2,11 +2,13 @@
 // it gets @if ed depending on $variant
 @import 'colors-custom';
 
-$headerbar_fg_color: #FAFAFA;
-$headerbar_bg_color: #4c4c4c;
-$headerbar_selected_fg_color: #ffffff;
-$headerbar_selected_bg_color: #f07746;
-$headerbar_selected_borders_color: darken($headerbar_selected_bg_color, 30%);
+$hb_fg_color: #FAFAFA;
+$hb_bg_color: #252525; //#4c4c4c;
+$hb_selected_fg_color: #ffffff;
+$hb_selected_bg_color: #f07746;
+$hb_selected_borders_color: darken($hb_selected_bg_color, 30%);
+$hb_borders_color: darken($hb_bg_color, 20%);
+$hb_backdrop_borders_color: mix($hb_borders_color, $hb_bg_color, 80%);
 
 
 $base_color: if($variant == 'light', #ffffff, #232729);
@@ -24,7 +26,7 @@ $link_color: if($variant == 'light', darken($selected_bg_color, 10%), lighten($s
 $link_visited_color: if($variant == 'light', darken($selected_bg_color, 20%), lighten($selected_bg_color, 10%));
 $top_hilight: $borders_edge;
 $dark_fill: mix($borders_color, $bg_color, 50%);
-$headerbar_color: darken($headerbar_bg_color, 10%);
+$headerbar_color: darken($bg_color, 10%);
 $menu_color: if($variant == 'light', $base_color, mix($bg_color, $base_color, 20%));
 $popover_bg_color: $bg_color;
 $popover_hover_color: lighten($bg_color, 5%);
