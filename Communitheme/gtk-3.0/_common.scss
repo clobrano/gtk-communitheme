@@ -1441,11 +1441,11 @@ headerbar {
   border-color: $alt_borders_color;
   border-radius: 0;
 
-  @include headerbar_fill($headerbar_bg_color);
+  @include headerbar_fill($hb_bg_color);
 
   &:backdrop {
     border-color: $backdrop_borders_color;
-    background-color: $headerbar_bg_color;
+    background-color: $hb_bg_color;
     background-image: none;
     box-shadow: inset 0 1px $top_hilight;
 
@@ -1471,16 +1471,16 @@ headerbar {
   &.selection-mode {
     $_hc: mix($top_hilight,$selected_bg_color, 50%); // hilight color
 
-    color: $headerbar_selected_fg_color;
-    border-color: $headerbar_selected_borders_color;
+    color: $hb_selected_fg_color;
+    border-color: $hb_selected_borders_color;
     text-shadow: 0 -1px transparentize(black, 0.5);
 
-    @include headerbar_fill($headerbar_selected_bg_color, $_hc);
+    @include headerbar_fill($hb_selected_bg_color, $_hc);
 
     &:backdrop {
-      background-color: $headerbar_selected_bg_color;
+      background-color: $hb_selected_bg_color;
       background-image: none;
-      box-shadow: inset 0 1px mix($top_hilight, $headerbar_selected_bg_color, 60%);
+      box-shadow: inset 0 1px mix($top_hilight, $hb_selected_bg_color, 60%);
     }
 
     .subtitle:link { @extend *:link:selected;  }
@@ -1629,41 +1629,42 @@ headerbar {
 
 headerbar {
   // add vertical margins to common widget on the headerbar to avoid them spanning the whole height
+  
   entry,
   spinbutton,
   separator,
   button {
-    @include button(normal, $headerbar_bg_color, $headerbar_fg_color);
+    @include button(normal, $hb_bg_color, $hb_fg_color);
     &.flat { @include button(undecorated); }
 
-    &:hover { @include button(hover, $headerbar_bg_color, $headerbar_fg_color); }
+    &:hover { @include button(hover, $hb_bg_color, $hb_fg_color); }
 
     &:active,
-    &:checked { @include button(active, $headerbar_bg_color, $headerbar_selected_fg_color); }
+    &:checked { @include button(active, $hb_bg_color, $hb_selected_fg_color); }
 
     &:backdrop {
         &.flat, & {
-            @include button(backdrop, $headerbar_bg_color, $headerbar_selected_fg_color);
+            @include button(backdrop, lighten($hb_bg_color,50%), $hb_selected_fg_color);
 
             -gtk-icon-effect: none;
-            border-color: $headerbar_selected_borders_color;
+            border-color: $hb_selected_borders_color;
 
             &:active,
             &:checked {
-                @include button(backdrop-active, $headerbar_bg_color, $headerbar_selected_fg_color);
+                @include button(backdrop-active, $hb_bg_color, $hb_selected_fg_color);
 
-                border-color: $headerbar_selected_borders_color;
+                border-color: $hb_selected_borders_color;
             }
 
             &:disabled {
-                @include button(backdrop-insensitive, $headerbar_bg_color, $headerbar_selected_fg_color);
+                @include button(backdrop-insensitive, $hb_bg_color, $hb_selected_fg_color);
 
-                border-color: $headerbar_selected_borders_color;
+                border-color: $hb_selected_borders_color;
 
                 &:active, &:checked {
-                    @include button(backdrop-insensitive-active, $headerbar_bg_color, $headerbar_selected_fg_color);
+                    @include button(backdrop-insensitive-active, $hb_bg_color, $hb_selected_fg_color);
 
-                    border-color: $headerbar_selected_borders_color;
+                    border-color: $hb_selected_borders_color;
                 }
             }
         }
@@ -4403,7 +4404,29 @@ button.titlebutton {
   }
 
   &:backdrop { -gtk-icon-shadow: none; }
+  &.minimize,
+  &.maximize {
+      border-color: white;
+      color: white;
+
+      &:hover {
+        color: black;
+      }
+  }
+
+  &.close {
+    background: red;
+    border-color: red;
+    color: white;
+  }
+
+  border-radius: 20px;
+  border-width: 1.5px;
+  min-height: 12px;
+  min-width: 8px;
+  padding: 4px;
 }
+
 
 headerbar.selection-mode button.titlebutton,
 .titlebar.selection-mode button.titlebutton {
