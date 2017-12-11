@@ -1631,6 +1631,84 @@ headerbar {
   spinbutton,
   separator,
   button {
+    @include button(normal, $ubuntu_headerbar_bg_color, $ubuntu_headerbar_fg_color);
+
+    &.flat { @include button(undecorated); }
+    &:hover { @include button(hover, $selected_bg_color, $selected_fg_color); }
+    &:active,
+    &:checked { @include button(active, $selected_bg_color, $selected_fg_color); }
+    &:backdrop {
+      &.flat, & {
+        @include button(backdrop, $selected_bg_color, $selected_fg_color);
+
+        -gtk-icon-effect: none;
+        border-color: $selected_borders_color;
+
+        &:active,
+        &:checked {
+          @include button(backdrop-active, $selected_bg_color, $selected_fg_color);
+
+          border-color: $selected_borders_color;
+        }
+
+        &:disabled {
+          @include button(backdrop-insensitive, $selected_bg_color, $selected_fg_color);
+
+          border-color: $selected_borders_color;
+
+          &:active, &:checked {
+            @include button(backdrop-insensitive-active, $selected_bg_color, $selected_fg_color);
+
+            border-color: $selected_borders_color;
+          }
+        }
+      }
+    }
+
+    &.flat { &:backdrop, &:disabled, &:backdrop:disabled { @include button(undecorated); }}
+
+    &:disabled {
+    @include button(insensitive, $selected_bg_color, $selected_fg_color);
+
+    &:active,
+    &:checked { @include button(insensitive-active, $selected_bg_color, $selected_fg_color); }
+    }
+
+    &.suggested-action {
+    @include button(normal);
+
+    border-color: $selected_borders_color;
+
+    &:hover {
+      @include button(hover);
+
+      border-color: $selected_borders_color;
+    }
+
+    &:active {
+      @include button(active);
+
+      border-color: $selected_borders_color;
+    }
+
+    &:disabled {
+      @include button(insensitive);
+
+      border-color: $selected_borders_color;
+    }
+
+    &:backdrop {
+      @include button(backdrop);
+
+      border-color: $selected_borders_color;
+    }
+
+    &:backdrop:disabled {
+      @include button(backdrop-insensitive);
+
+      border-color: $selected_borders_color;
+    }
+    }
     margin-top: 6px;
     margin-bottom: 6px;
   }

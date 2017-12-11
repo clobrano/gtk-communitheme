@@ -11,7 +11,8 @@ $ubuntu_tooltip_fg_color: #ffffff;
 /* widgets main borders color (originally "borders") */
 $ubuntu_borders_color: darken($ubuntu_bg_color, 0.82);
 
-$ubuntu_headerbar_color: #252525;
+$ubuntu_headerbar_bg_color: #252525;
+$ubuntu_headerbar_fg_color: #f0f0f0;
 
 $ubuntu_suggested_action_bg_color: #38b44a;
 $ubuntu_destructive_action_bg_color: red;
