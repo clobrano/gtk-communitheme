@@ -153,7 +153,7 @@ flowbox {
   background-color: if($variant=='light', transparent, black);
   border-radius: 0;
   padding: 0;
-  
+
   &:backdrop { background-color: if($variant=='light', transparent, darken($backdrop_base_color,5%)); }
   &:active, &:selected { background-color: if($variant=='light', transparent, $selected_bg_color); }
   &:disabled { background-color: if($variant=='light', transparent, $insensitive_bg_color); }
@@ -698,8 +698,8 @@ button {
   }
 
   // Suggested and Destructive Action buttons
-  @each $b_type, $b_color in (suggested-action, $selected_bg_color),
-                             (destructive-action, $destructive_color) {
+  @each $b_type, $b_color in (suggested-action, $ubuntu_suggested_action_bg_color),
+                             (destructive-action, $ubuntu_destructive_action_bg_color) {
     &.#{$b_type} {
       @include button(normal, $b_color, white);
 
@@ -3844,7 +3844,7 @@ stacksidebar {
 $_placesidebar_icons_opacity: 0.7;
 
 row image.sidebar-icon { opacity: $_placesidebar_icons_opacity; } // dim the sidebar icons
-                                                                  // see bug #786613 for details 
+                                                                  // see bug #786613 for details
                                                                   // on this oddity
 
 placessidebar {

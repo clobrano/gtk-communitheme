@@ -29,8 +29,8 @@ $scrollbar_slider_active_color: darken($selected_bg_color, 10%);
 
 $warning_color: #f57900;
 $error_color: #cc0000;
-$success_color: #73d216;
-$destructive_color: #ef2929;
+$success_color: $ubuntu_suggested_action_bg_color;
+$destructive_color: $ubuntu_destructive_action_bg_color;
 
 $osd_fg_color: #eeeeec;
 $osd_text_color: white;
