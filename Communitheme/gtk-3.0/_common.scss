@@ -1644,27 +1644,27 @@ headerbar {
     &:checked { @include button(active, $ubuntu_headerbar_bg_selected_color, $selected_fg_color); }
     &:backdrop {
       &.flat, & {
-        @include button(backdrop, $ubuntu_headerbar_bg_selected_color, $selected_fg_color);
+        @include button(backdrop, lighten($headerbar_color, 10%), $selected_fg_color);
 
         -gtk-icon-effect: none;
-        border-color: transparentize($ubuntu_headerbar_bg_selected_color, 0.2);
+        border-color: lighten($headerbar_color, 10%);
 
         &:active,
         &:checked {
-          @include button(backdrop-active, $ubuntu_headerbar_bg_selected_color, $selected_fg_color);
+          @include button(backdrop-active, lighten($headerbar_color, 10%), $selected_fg_color);
 
-          border-color: transparentize($ubuntu_headerbar_bg_selected_color, 0.2);
+          border-color: lighten($headerbar_color, 10%);
         }
 
         &:disabled {
-          @include button(backdrop-insensitive, $ubuntu_headerbar_bg_selected_color, $selected_fg_color);
+          @include button(backdrop-insensitive, lighten($headerbar_color, 10%), $selected_fg_color);
 
-          border-color: transparentize($ubuntu_headerbar_bg_selected_color, 0.2);
+          border-color: lighten($headerbar_color, 10%);
 
           &:active, &:checked {
-            @include button(backdrop-insensitive-active, $ubuntu_headerbar_bg_selected_color, $selected_fg_color);
+            @include button(backdrop-insensitive-active, lighten($headerbar_color, 10%), $selected_fg_color);
 
-            border-color: transparentize($ubuntu_headerbar_bg_selected_color, 0.2);
+            border-color: lighten($headerbar_color, 10%);
           }
         }
       }
