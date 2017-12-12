@@ -4442,6 +4442,32 @@ button.titlebutton {
 
   @include _button_text_shadow;
 
+  border-radius: 20px;
+  color: $ubuntu_headerbar_fg_color;
+  min-height: 8px;
+  min-width: 16px;
+  padding: 4px;
+
+  &.close {
+    background-color: red;
+
+    &:focus {
+        color: $ubuntu_headerbar_fg_color;
+        border-width: 3px;
+        border-color: $ubuntu_headerbar_fg_color;
+    }
+  }
+
+  &.maximize,
+  &.minimize {
+      background-color: $ubuntu_headerbar_bg_color;
+      &:focus {
+          background-color: $ubuntu_headerbar_bg_color;
+          border-width: 2px;
+          border-color: $ubuntu_headerbar_fg_color;
+      }
+  }
+
   .selection-mode & {
     @extend %button.flat.suggested-action;
 
