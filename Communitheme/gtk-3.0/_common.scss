@@ -4553,13 +4553,14 @@ button.titlebutton {
   border-radius: 100%;
   min-width: 20px;
   min-height: 20px;
-  margin: 0;
-  padding: 0;
+  margin: 0 2px;
+  padding: 3px;
 
   &.close {
     @include button(normal, $selected_bg_color, white);
 
     @include reload_button_styles($selected_bg_color, white, $retain_borders: true);
+    box-shadow: 0 6px 2px -2px black;
   }
 
   .selection-mode & {
