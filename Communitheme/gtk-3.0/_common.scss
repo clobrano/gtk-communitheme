@@ -4564,6 +4564,15 @@ button.titlebutton {
       }
   }
 
+  &.maximize,
+  &.minimize {
+    &:hover {
+      background: grey;
+      border-width: 1px;
+      box-shadow: 0 6px 2px -2px black;
+    }
+  }
+
   .selection-mode & {
     @extend %button.flat.suggested-action;
 
