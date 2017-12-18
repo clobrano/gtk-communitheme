@@ -4550,26 +4550,17 @@ button.titlebutton {
   // @extend %button_basic;
   // @extend %button_basic.flat;
   // @include _button_text_shadow;
-  border-radius: 100%;
-  min-width: 20px;
-  min-height: 20px;
+  //border-radius: 100%;
+  min-width: 24px;
+  min-height: 24px;
   margin: 0 2px;
-  padding: 3px;
+  padding: 2px;
 
-  &.close {
-      &:hover {
-        @include button(normal, $selected_bg_color, white);
-        @include reload_button_styles($selected_bg_color, white, $retain_borders: true);
-        box-shadow: 0 6px 2px -2px black;
-      }
-  }
-
-  &.maximize,
-  &.minimize {
-    &:hover {
-      background: grey;
-      border-width: 1px;
-      box-shadow: 0 6px 2px -2px black;
+  &:hover {
+    &.close {
+      @include button(normal, $selected_bg_color, white);
+      border-color: $selected_bg_color;
+      @include reload_button_styles($selected_bg_color, white, $retain_borders: false);
     }
   }
 

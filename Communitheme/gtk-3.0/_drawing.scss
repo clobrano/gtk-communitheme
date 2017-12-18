@@ -213,6 +213,7 @@ $button_bg_color: darken($bg_color, if($variant == "light", 6%, 5%));
     outline-color: transparentize($tc, 0.7);
     border-color: if($c != $button_bg_color, _border_color($c), $borders_color);
     background-color: lighten($c, 10%);
+    box-shadow: 0 3px 2px -2px black;
     // border-bottom-color: if($c != $bg_color, _border_color($c, true), $alt_borders_color);
     // @if $variant == 'light' {
     //  $button_fill: linear-gradient(to bottom, lighten($c, 6%), $c 60%, darken($c, 4%)) !global;
