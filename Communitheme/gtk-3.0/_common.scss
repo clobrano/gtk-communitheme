@@ -108,10 +108,12 @@ $button_transition: all 200ms $ease-out-quad;
   }
 
   &:selected {
-    &:focus, & {
-      @extend %selected_items;
+    border: 1px solid $selected_bg_color;
 
-      border-radius: 3px;
+    &:focus {
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
+      //@extend %selected_items;
     }
   }
 }
