@@ -139,12 +139,13 @@ flowbox {
   rubberband { @extend rubberband; }
 
   flowboxchild {
-    padding: 3px;
+    padding: 12px 0px 0px 0px;
 
     &:selected {
       @extend %selected_items;
 
-      outline-offset: -2px;
+      &:backdrop label { color: white; }
+      //outline-offset: -2px;
     }
   }
 }

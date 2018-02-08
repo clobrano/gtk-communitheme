@@ -38,7 +38,7 @@ list.tweak-categories separator {
     background-color: rgba(255, 255, 255, 0.1); // folder icon is tinted based on this
                                                 // near transparent white results in no tint
                                                 // completely transparent tints the icon black
-    background-image: image($selected_bg_color); // label background becomes this
+    background-image: image(white); // label background becomes this
   }
 }
 
