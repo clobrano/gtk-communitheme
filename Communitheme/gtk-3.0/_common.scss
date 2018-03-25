@@ -418,7 +418,7 @@ entry {
     & {
       // buttons next to entry fields need less padding so as to not appear to wide
       padding-left: 6px;
-      padding-right: 6px
+      padding-right: 6px;
     }
   }
 }
@@ -961,7 +961,8 @@ toolbar.inline-toolbar toolbutton:backdrop {
 
   &:not(:first-child) > button.flat {
     // linked buttons will have more defined border colors
-    border-left-color: $borders_color;
+    border-left-width: 1px;
+    border-left-style: solid;
     &:disabled { border-left-color: $insensitive_borders_color;}
   }
 
@@ -973,6 +974,9 @@ toolbar.inline-toolbar toolbutton:backdrop {
 %linked_middle {
   border-radius: 0;
   border-right-style: none;
+  &:hover {
+      border-right-style: solid;
+  }
   -gtk-outline-radius: 0;
 }
 
@@ -983,7 +987,6 @@ toolbar.inline-toolbar toolbutton:backdrop {
     border-top-left-radius: $small_radius;
     border-bottom-left-radius: $small_radius;
     -gtk-outline-radius: $small_radius 0 0 $small_radius;
-
   }
 
   &:last-child {
@@ -1396,7 +1399,8 @@ combobox {
 .linked:not(.vertical) > combobox:only-child > box > button.combo { @extend %linked:only-child; }
 .linked:not(.vertical) > combobox:not(:first-child) > box > button.combo {
   // linked buttons will have more defined border colors
-  border-left-color: $borders_color;
+  border-left-width: 1px;
+  border-left-style: solid;
   &:disabled { border-left-color: $insensitive_borders_color; }
 }
 
@@ -1406,7 +1410,8 @@ combobox {
 .linked.vertical > combobox:only-child > box > button.combo { @extend %linked_vertical:only-child; }
 .linked.vertical > combobox:not(:first-child) > box > button.combo {
   // linked buttons will have more defined border colors
-  border-top-color: $borders_color;
+  border-top-width: 1px;
+  border-top-style: solid;
   &:disabled { border-top-color: $insensitive_borders_color; }
 }
 
@@ -1620,7 +1625,7 @@ headerbar {
 
         & + entry,
         & + button {
-          &:disabled { border-left-color: none; }
+          &:disabled { border-left-color: transparent; }
           &:backdrop { border-left-color: _border_color($headerbar_bg_color); }
         }
       }
@@ -2841,7 +2846,7 @@ switch {
 
   &:backdrop {
     slider {
-      background-color: $backdrop_bg_color;
+      background-color: _backdrop_color(white);
       transition: $backdrop_transition;
     }
 
